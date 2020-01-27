@@ -13,8 +13,6 @@ class Authenticate extends Controller
 	public function index($value='')
 	{
 		$this->view->render('sign-in');
-
-		Test::Console_Write('hhhh');
 	}
 
 	public function doLogin($value='')

@@ -8,12 +8,13 @@ class Route {
 
     function __construct() {
         
-        $url = isset($_GET['url']) ? $_GET['url'] : null;
+        $url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : null;
         $url = rtrim($url, '/');
-        $url = explode('/', $url);
+		$url = explode('/', $url);
+		array_shift($url);
 
-        $this->method = $url;
-
+		// $url[0] expects to be string after / in url
+		$this->method = $url;
         $this->url = '/' . $url[0];
 	}
 
@@ -47,6 +48,8 @@ class Route {
 
 			$file = 'controller/' . $controller['path'] . '.php';
 
+			Test::Console_Write($uri);
+
 		    if(file_exists($file)){
 		        require $file;
 		    }else{
@@ -73,7 +76,7 @@ class Route {
 			if (method_exists($controller, $this->method[1])) {
 				$controller->{$this->method[1]}($this->method[2]);
 			} else {
-				$this->error();
+				$this->error();Test::Console_Write('test');
 
 				console_write('method 2 : ' . $this->method[2]);
 			}
