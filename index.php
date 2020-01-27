@@ -2,8 +2,6 @@
 
 session_start();
 
-Test::Console_Write('success');
-
 //User Autoloader
 require_once $_SERVER['DOCUMENT_ROOT'].'libs/Router.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'libs/Controller.php';
@@ -21,6 +19,8 @@ require_once $_SERVER['DOCUMENT_ROOT'].'config.php';
 
 //Testing
 require_once $_SERVER['DOCUMENT_ROOT'].'test/ConsoleWrite.php';
+
+Test::Console_Write('success');
 
 $app = new Route();
 
