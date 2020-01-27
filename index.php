@@ -2,6 +2,8 @@
 
 session_start();
 
+Test::Console_Write('success');
+
 //User Autoloader
 require_once $_SERVER['DOCUMENT_ROOT'].'libs/Router.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'libs/Controller.php';
