@@ -3,25 +3,25 @@
 session_start();
 
 //User Autoloader
-require 'libs/router.php';
-require 'libs/Controller.php';
-require 'libs/View.php';
-require 'libs/Model.php';
+require_once 'libs/router.php';
+require_once 'libs/Controller.php';
+require_once 'libs/View.php';
+require_once 'libs/Model.php';
 
 //Library
-require 'libs/Database.php';
-require 'libs/auth/authregister.php';
-require 'libs/auth/authlogin.php';
-require 'libs/Flash.php';
-require 'libs/Test.php';
+require_once 'libs/Database.php';
+require_once 'libs/auth/authregister.php';
+require_once 'libs/auth/authlogin.php';
+require_once 'libs/Flash.php';
+require_once 'libs/Test.php';
 
-require'config.php';
+require_once 'config.php';
 
 //Testing
-require 'test/ConsoleWrite.php';
+require_once 'test/ConsoleWrite.php';
 
 $app = new Route();
 
-require 'route.php';
+require_once 'route.php';
 
 $app->run();
