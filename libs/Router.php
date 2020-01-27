@@ -15,7 +15,12 @@ class Route {
 
 		// $url[0] expects to be string after / in url
 		$this->method = $url;
-        $this->url = '/' . $url[0];
+
+		if (isset($url[0])) {
+			$this->url = '/' . $url[0];
+		} else {
+			$this->url = '/';
+		}
 	}
 
 	public function redirect($controller, $function = NULL)
