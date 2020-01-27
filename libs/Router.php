@@ -13,6 +13,8 @@ class Route {
 		$url = explode('/', $url);
 		array_shift($url);
 
+		Test::Console_Write($url);
+
 		// $url[0] expects to be string after / in url
 		$this->method = $url;
 
